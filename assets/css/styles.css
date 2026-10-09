@@ -191,6 +191,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--border); padding: 20px 0; color: var(--text-muted); font-size: 0.9rem; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; }
 
 /* Small screens */
 @media (max-width: 680px) {
