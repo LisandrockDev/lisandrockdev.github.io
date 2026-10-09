@@ -8,12 +8,17 @@
   <meta name="author" content="Guido Devoto Bifulco">
   <link rel="canonical" href="https://lisandrockdev.github.io/restinn.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6l16 0"/><path d="M4 12l16 0"/><path d="M4 18l16 0"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></symbol>
   </svg>
@@ -22,23 +27,34 @@
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="brand" href="index.html">Guido Devoto Bifulco</a>
-      <button class="menu-btn" type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <svg class="icon icon-open"><use href="#i-menu"/></svg>
-        <svg class="icon icon-close"><use href="#i-x"/></svg>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">GD</span>
+        <span class="brand-name">Guido Devoto Bifulco</span>
+      </a>
+      <div class="nav-panel" id="nav-panel">
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-tools">
+        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Switch to light theme">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-panel">
+          <svg class="icon icon-open"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-x"/></svg>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main id="main" class="container">
-    <section class="intro" aria-labelledby="title">
+  <main id="main">
+    <section class="page-intro container" aria-labelledby="title">
       <p class="back"><a href="index.html#projects">← Back to projects</a></p>
       <h1 id="title">RestInn: project documentation</h1>
       <p class="summary">Hotel management system developed as a team at UTN (Programming III and IV, 2025). I was responsible for the requirements analysis and the project documentation shown on this page. The diagrams are in Spanish, as delivered for the courses.</p>
@@ -49,8 +65,8 @@
       </p>
     </section>
 
-    <section class="section" aria-labelledby="impact-title">
-      <h2 id="impact-title">Impact mapping</h2>
+    <section class="section doc-section container" aria-labelledby="impact-title">
+      <h2 class="section-title" id="impact-title">Impact mapping</h2>
       <p>Business goal, actors, expected impacts, and the deliverables that support them.</p>
       <figure class="diagram">
         <a href="assets/restinn/impact-mapping.svg" target="_blank" rel="noopener"><img src="assets/restinn/impact-mapping.svg" alt="Impact map of RestInn: goal, actors, impacts, and deliverables" width="1172" height="652" loading="lazy"></a>
@@ -58,8 +74,8 @@
       </figure>
     </section>
 
-    <section class="section" aria-labelledby="usecases-title">
-      <h2 id="usecases-title">Use cases</h2>
+    <section class="section doc-section container" aria-labelledby="usecases-title">
+      <h2 class="section-title" id="usecases-title">Use cases</h2>
       <p>Use cases for each actor: client, administrator, receptionist, cleaning staff, and concierge.</p>
       <figure class="diagram">
         <a href="assets/restinn/use-cases.svg" target="_blank" rel="noopener"><img src="assets/restinn/use-cases.svg" alt="Use case diagram of RestInn" width="1417" height="1552" loading="lazy"></a>
@@ -67,8 +83,8 @@
       </figure>
     </section>
 
-    <section class="section" aria-labelledby="conceptual-title">
-      <h2 id="conceptual-title">Conceptual model</h2>
+    <section class="section doc-section container" aria-labelledby="conceptual-title">
+      <h2 class="section-title" id="conceptual-title">Conceptual model</h2>
       <p>Main entities of the domain and their relationships.</p>
       <figure class="diagram">
         <a href="assets/restinn/conceptual-model.svg" target="_blank" rel="noopener"><img src="assets/restinn/conceptual-model.svg" alt="Conceptual model of RestInn" width="1522" height="822" loading="lazy"></a>
@@ -82,8 +98,8 @@
       </figure>
     </section>
 
-    <section class="section" aria-labelledby="uml-title">
-      <h2 id="uml-title">UML class diagram</h2>
+    <section class="section doc-section container" aria-labelledby="uml-title">
+      <h2 class="section-title" id="uml-title">UML class diagram</h2>
       <p>Backend design by layer: controllers, services, repositories, DTOs, security with JWT, validations, and exception handling. The diagram is large; open it at full size to read it.</p>
       <figure class="diagram">
         <a href="assets/restinn/uml-class-diagram.svg" target="_blank" rel="noopener"><img src="assets/restinn/uml-class-diagram.svg" alt="UML class diagram of the RestInn backend" width="6487" height="7486" loading="lazy"></a>

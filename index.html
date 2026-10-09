@@ -11,7 +11,12 @@
   <meta property="og:url" content="https://lisandrockdev.github.io/">
   <meta property="og:title" content="Guido Devoto Bifulco | Full Stack Developer (.NET)">
   <meta property="og:description" content="Migration of ERP systems from VB.NET desktop applications to web applications with Blazor, C#, and SQL Server.">
+  <meta name="theme-color" content="#0f1117" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -20,223 +25,279 @@
     <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M8 11v5"/><path d="M8 8v.01"/><path d="M12 16v-5"/><path d="M16 16v-3a2 2 0 1 0 -4 0"/><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10"/></symbol>
     <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M17 7l-10 10"/><path d="M8 7l9 0l0 9"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6"/><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"/><path d="M8 11v-4a4 4 0 1 1 8 0v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"/><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"/><path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454l0 .008"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6l16 0"/><path d="M4 12l16 0"/><path d="M4 18l16 0"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9"/><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"/><path d="M12 12l0 .01"/><path d="M3 13a20 20 0 0 0 18 0"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M22 9l-10 -4l-10 4l10 4l10 -4v6"/><path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M7 8l-4 4l4 4"/><path d="M17 8l4 4l-4 4"/><path d="M14 4l-4 16"/></symbol>
   </svg>
 
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main">
-      <a class="brand" href="#top">Guido Devoto Bifulco</a>
-      <button class="menu-btn" type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
-        <svg class="icon icon-open"><use href="#i-menu"/></svg>
-        <svg class="icon icon-close"><use href="#i-x"/></svg>
-      </button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <a class="brand" href="#top" aria-label="Guido Devoto Bifulco, back to top">
+        <span class="brand-mark" aria-hidden="true">GD</span>
+        <span class="brand-name">Guido Devoto Bifulco</span>
+      </a>
+      <div class="nav-panel" id="nav-panel">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-tools">
+        <button class="icon-btn" type="button" id="theme-toggle" aria-label="Switch to light theme">
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" type="button" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-panel">
+          <svg class="icon icon-open"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-x"/></svg>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main id="main" class="container">
-    <section class="intro" aria-labelledby="name">
-      <h1 id="name">Guido Devoto Bifulco</h1>
-      <p class="role">Full Stack Developer (.NET) · Mar del Plata, Argentina</p>
-      <p class="summary">I work on the migration of ERP systems from VB.NET desktop applications to web applications built with Blazor, C#, and SQL Server.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://www.linkedin.com/in/guido-devoto" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
-        <a class="btn" href="https://github.com/LisandrockDev" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+  <main id="main">
+    <section class="hero container" id="intro" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Guido Devoto Bifulco</h1>
+        <p class="hero-role">Full Stack Developer (.NET)</p>
+        <p class="hero-lead">I work on the migration of ERP systems from VB.NET desktop applications to web applications built with Blazor, C#, and SQL Server.</p>
+        <ul class="hero-meta">
+          <li><svg class="icon"><use href="#i-pin"/></svg>Mar del Plata, Argentina</li>
+          <li><svg class="icon"><use href="#i-briefcase"/></svg>NS Consultores</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/guido-devoto" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          <a class="btn" href="#projects">View projects</a>
+          <a class="btn btn-ghost btn-icon" href="https://github.com/LisandrockDev" target="_blank" rel="noopener" aria-label="GitHub profile"><svg class="icon"><use href="#i-github"/></svg></a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Profile summary">
+        <h2 class="card-title">Profile</h2>
+        <dl class="facts">
+          <div><dt>Current position</dt><dd>Full Stack Developer, NS Consultores, since June 2026</dd></div>
+          <div><dt>Focus</dt><dd>ERP migration from desktop to web</dd></div>
+          <div><dt>Core stack</dt><dd>C# · Blazor · SQL Server · VB.NET</dd></div>
+          <div><dt>Education</dt><dd>Programming at UTN · Electromechanical Technician</dd></div>
+          <div><dt>Languages</dt><dd>Spanish (native) · English (limited working proficiency)</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="section container" id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Full Stack Developer at NS Consultores since June 2026. I maintain the company's VB.NET desktop ERP and build its web version with Blazor and C#, including the SQL Server side: stored procedures, functions, and migration scripts.</p>
+          <p>I also develop features for a production management system used by manufacturing companies, and since October 2026 I work as a freelancer on a Power Platform and Azure integration project.</p>
+          <p>Before working in software I worked in industrial electrical maintenance. I am an Electromechanical Technician.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title"><svg class="icon"><use href="#i-school"/></svg>Education</h3>
+          <ul class="edu-list">
+            <li><strong>Tecnicatura Universitaria en Programación</strong><span>Universidad Tecnológica Nacional · 2024–2026</span></li>
+            <li><strong>Engineering studies</strong><span>Universidad Nacional de Mar del Plata · 2019–2023</span></li>
+            <li><strong>Electromechanical Technician</strong><span>Instituto Industrial Pablo Tavelli · 2012–2018</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p>Full Stack Developer at NS Consultores since June 2026. I maintain the company's VB.NET desktop ERP and build its web version with Blazor and C#, including the SQL Server side: stored procedures, functions, and migration scripts.</p>
-      <p>Before working in software I worked in industrial electrical maintenance. I am an Electromechanical Technician.</p>
-      <h3>Education</h3>
-      <ul class="plain-list">
-        <li><strong>Tecnicatura Universitaria en Programación</strong>, Universidad Tecnológica Nacional · <span class="nowrap">2024–2026</span></li>
-        <li><strong>Engineering studies</strong>, Universidad Nacional de Mar del Plata · <span class="nowrap">2019–2023</span></li>
-        <li><strong>Electromechanical Technician</strong>, Instituto Industrial Pablo Tavelli · <span class="nowrap">2012–2018</span></li>
-      </ul>
+    <section class="section container" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <div class="timeline-head">
+            <h3>Full Stack Developer <span class="at">· NS Consultores</span></h3>
+            <p class="timeline-meta">Jun 2026 – Present · Mar del Plata · On-site</p>
+          </div>
+          <ul class="bullets">
+            <li>Migration of ERP modules from VB.NET (WinForms) to Blazor and C#.</li>
+            <li>SQL Server development: stored procedures, functions, and versioned migration scripts.</li>
+            <li>Server-side permission checks and validations in the web ERP, including the ARCA electronic invoicing integration.</li>
+            <li>Features for a production management system: manufacturing orders, batch traceability, quality control, and inventory.</li>
+            <li>Requirements analysis with clients, testing, and releases under a Kanban workflow with SVN.</li>
+          </ul>
+          <ul class="tags" aria-label="Technologies">
+            <li>C#</li><li>Blazor</li><li>.NET</li><li>SQL Server</li><li>T-SQL</li><li>VB.NET</li>
+          </ul>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-head">
+            <h3>Freelance Software Developer</h3>
+            <p class="timeline-meta">Feb 2026 – Present · Remote</p>
+          </div>
+          <ul class="bullets">
+            <li>From October 2026: custom API to exchange data between a client's Power Platform CRM and Salesforce, using Power Apps (model-driven and canvas apps, forms, web resources), Power Automate, and Azure Data Factory.</li>
+            <li>Frontend for an online ordering application for restaurants.</li>
+            <li>Test automation in Python.</li>
+            <li>Personal tools for Arch Linux.</li>
+          </ul>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-head">
+            <h3>Industrial Electrician <span class="at">· IMA Tecmar</span></h3>
+            <p class="timeline-meta">Oct 2019 – Apr 2020 · Mar del Plata</p>
+          </div>
+          <ul class="bullets">
+            <li>Installation, maintenance, and repair of electrical systems in a production plant, including three-phase (380 V) machinery.</li>
+          </ul>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-head">
+            <h3>Intern <span class="at">· Electroterma</span></h3>
+            <p class="timeline-meta">Jul 2018 – Dec 2018</p>
+          </div>
+          <ul class="bullets">
+            <li>Internship in a metalworking plant as part of the technical school program.</li>
+          </ul>
+        </li>
+      </ol>
     </section>
 
-    <section class="section" id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+    <section class="section container" id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
 
-      <article class="entry">
-        <header class="entry-head">
-          <h3>Full Stack Developer · NS Consultores</h3>
-          <p class="meta">Jun 2026 – Present · Mar del Plata, on-site</p>
-        </header>
-        <ul class="bullets">
-          <li>Migration of ERP modules from VB.NET (WinForms) to Blazor and C#.</li>
-          <li>SQL Server development: stored procedures, functions, and versioned migration scripts.</li>
-          <li>Server-side permission checks and validations in the web ERP, including the ARCA electronic invoicing integration.</li>
-          <li>Features for a production management system: manufacturing orders, batch traceability, quality control, and inventory.</li>
-          <li>Requirements analysis with clients, testing, and releases under a Kanban workflow with SVN.</li>
+      <div class="project-group">
+        <div class="group-head">
+          <h3><svg class="icon"><use href="#i-school"/></svg>Academic projects (UTN)</h3>
+          <p class="group-note">Team projects</p>
+        </div>
+        <ul class="cards cards-two">
+          <li class="card project project-wide">
+            <h4>RestInn</h4>
+            <p class="context">Programming III and IV · 2025</p>
+            <p>Hotel management system: reservations with availability control, check-in and check-out, rooms, billing, and users with roles. Built over two courses: a Spring Boot REST API with Spring Security (JWT), JPA, and MySQL in Programming III, then extended with an Angular frontend in Programming IV.</p>
+            <p class="role"><strong>My role:</strong> requirements analysis and all project documentation, including impact mapping, use cases, the conceptual model, and UML class diagrams. I also contributed to the API and the Angular frontend.</p>
+            <ul class="tags"><li>Java 21</li><li>Spring Boot</li><li>Spring Security (JWT)</li><li>MySQL</li><li>Swagger</li><li>Angular</li><li>TypeScript</li></ul>
+            <p class="links">
+              <a href="restinn.html">Documentation and diagrams</a>
+              <a href="https://github.com/ManuJurado/RestInn_Api_OldVersion" target="_blank" rel="noopener">API, Programming III<svg class="icon"><use href="#i-arrow"/></svg></a>
+              <a href="https://github.com/ManuJurado/Restinn-Api-Springboot" target="_blank" rel="noopener">API, Programming IV<svg class="icon"><use href="#i-arrow"/></svg></a>
+              <a href="https://github.com/EmiSalias/RestInn-FrontEnd-Angular" target="_blank" rel="noopener">Frontend<svg class="icon"><use href="#i-arrow"/></svg></a>
+            </p>
+          </li>
+          <li class="card project">
+            <h4>Police station management</h4>
+            <p class="context">Programming II · 2024 · Team of four</p>
+            <p>Console application in Java to manage a police station: evidence and equipment storage, cases and complaints, departments and staff, and holding cells. CRUD operations, JSON persistence with org.json, custom exceptions, and input validation.</p>
+            <p class="role"><strong>My role:</strong> I planned the project and was one of its two main code contributors.</p>
+            <ul class="tags"><li>Java</li><li>JSON</li></ul>
+            <p class="links">
+              <a href="https://github.com/Romma711/comisaria_utn" target="_blank" rel="noopener">Repository<svg class="icon"><use href="#i-arrow"/></svg></a>
+              <a href="https://docs.google.com/document/d/1mKzItur93qJPamJ-on5y1jUR9RGKfsuoVAn2fo20Q0A/edit" target="_blank" rel="noopener">Technical report (Spanish)<svg class="icon"><use href="#i-arrow"/></svg></a>
+            </p>
+          </li>
+          <li class="card project">
+            <h4>File manager in C</h4>
+            <p class="context">Programming I · 2024</p>
+            <p>File handling with structs and dynamic memory.</p>
+            <ul class="tags"><li>C</li></ul>
+            <p class="links"><a href="https://github.com/Lisandstone/PROYECTO-FINAL-PROGRA-I" target="_blank" rel="noopener">Repository<svg class="icon"><use href="#i-arrow"/></svg></a></p>
+          </li>
         </ul>
-        <p class="tech">C# · Blazor · .NET · SQL Server · VB.NET</p>
-      </article>
+      </div>
 
-      <article class="entry">
-        <header class="entry-head">
-          <h3>Freelance Software Developer</h3>
-          <p class="meta">Feb 2026 – Present · Remote</p>
-        </header>
-        <ul class="bullets">
-          <li>From October 2026: custom API to exchange data between a client's Power Platform CRM and Salesforce, using Power Apps (model-driven and canvas apps, forms, web resources), Power Automate, and Azure Data Factory.</li>
-          <li>Frontend for an online ordering application for restaurants.</li>
-          <li>Test automation in Python.</li>
-          <li>Personal tools for Arch Linux.</li>
+      <div class="project-group">
+        <div class="group-head">
+          <h3><svg class="icon"><use href="#i-code"/></svg>Personal projects</h3>
+          <p class="group-note"><svg class="icon"><use href="#i-lock"/></svg>CENIT and DeadCenterDrift are private repositories</p>
+        </div>
+        <ul class="cards">
+          <li class="card project">
+            <h4>CENIT</h4>
+            <p>Desktop assistant for Windows that runs locally.</p>
+            <ul class="tags"><li>C#</li><li>Windows</li></ul>
+          </li>
+          <li class="card project">
+            <h4>DeadCenterDrift</h4>
+            <p>Mouse calibration tool for users whose wrist rotation skews cursor movement. It measures the drift with movement tests and corrects it. Test parameters are configurable.</p>
+            <ul class="tags"><li>Python</li></ul>
+          </li>
+          <li class="card project">
+            <h4>dotfiles</h4>
+            <p>Configuration of my first Arch Linux installation, set up to learn a fully customizable distribution.</p>
+            <ul class="tags"><li>Linux</li></ul>
+            <p class="links"><a href="https://github.com/Lisandstone/dotfiles" target="_blank" rel="noopener">Repository<svg class="icon"><use href="#i-arrow"/></svg></a></p>
+          </li>
         </ul>
-      </article>
-
-      <article class="entry">
-        <header class="entry-head">
-          <h3>Industrial Electrician · IMA Tecmar</h3>
-          <p class="meta">Oct 2019 – Apr 2020 · Mar del Plata</p>
-        </header>
-        <ul class="bullets">
-          <li>Installation, maintenance, and repair of electrical systems in a production plant, including three-phase (380 V) machinery.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <header class="entry-head">
-          <h3>Intern · Electroterma</h3>
-          <p class="meta">Jul 2018 – Dec 2018</p>
-        </header>
-        <ul class="bullets">
-          <li>Internship in a metalworking plant as part of the technical school program.</li>
-        </ul>
-      </article>
-    </section>
-
-    <section class="section" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <div class="projects">
-        <article class="project project-wide">
-          <h3>RestInn</h3>
-          <p class="context">UTN, Programming III and IV · 2025 · Team project</p>
-          <p>Hotel management system: reservations with availability control, check-in and check-out, rooms, billing, and users with roles. Built over two courses: a Spring Boot REST API with Spring Security (JWT), JPA, and MySQL in Programming III, then extended with an Angular frontend in Programming IV.</p>
-          <p class="role"><strong>My role:</strong> requirements analysis and all project documentation, including impact mapping, use cases, the conceptual model, and UML class diagrams. I also contributed to the API and the Angular frontend.</p>
-          <p class="tech">Java 21 · Spring Boot · Spring Security (JWT) · MySQL · Swagger · Angular · TypeScript</p>
-          <p class="links">
-            <a href="restinn.html">Documentation and diagrams</a>
-            <a href="https://github.com/ManuJurado/RestInn_Api_OldVersion" target="_blank" rel="noopener">API, Programming III<svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a href="https://github.com/ManuJurado/Restinn-Api-Springboot" target="_blank" rel="noopener">API, Programming IV<svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a href="https://github.com/EmiSalias/RestInn-FrontEnd-Angular" target="_blank" rel="noopener">Frontend<svg class="icon"><use href="#i-arrow"/></svg></a>
-          </p>
-        </article>
-        <article class="project project-wide">
-          <h3>Police station management</h3>
-          <p class="context">UTN, Programming II · 2024 · Team of four</p>
-          <p>Console application in Java to manage a police station: evidence and equipment storage, cases and complaints, departments and staff, and holding cells. CRUD operations, JSON persistence with org.json, custom exceptions, and input validation.</p>
-          <p class="role"><strong>My role:</strong> I planned the project and was one of its two main code contributors.</p>
-          <p class="tech">Java · JSON</p>
-          <p class="links">
-            <a href="https://github.com/Romma711/comisaria_utn" target="_blank" rel="noopener">Repository<svg class="icon"><use href="#i-arrow"/></svg></a>
-            <a href="https://docs.google.com/document/d/1mKzItur93qJPamJ-on5y1jUR9RGKfsuoVAn2fo20Q0A/edit" target="_blank" rel="noopener">Technical report (Spanish)<svg class="icon"><use href="#i-arrow"/></svg></a>
-          </p>
-        </article>
-        <article class="project">
-          <h3>CENIT</h3>
-          <p class="context">Personal project</p>
-          <p>Desktop assistant for Windows that runs locally.</p>
-          <p class="tech">C# · Private repository</p>
-        </article>
-        <article class="project">
-          <h3>DeadCenterDrift</h3>
-          <p class="context">Personal project</p>
-          <p>Mouse calibration tool for users whose wrist rotation skews cursor movement. It measures the drift with movement tests and corrects it. Test parameters are configurable.</p>
-          <p class="tech">Python · Private repository</p>
-        </article>
-        <article class="project">
-          <h3>File manager in C</h3>
-          <p class="context">UTN, Programming I · 2024 · Team project</p>
-          <p>File handling with structs and dynamic memory.</p>
-          <p class="tech">C</p>
-          <p class="links"><a href="https://github.com/Lisandstone/PROYECTO-FINAL-PROGRA-I" target="_blank" rel="noopener">Repository<svg class="icon"><use href="#i-arrow"/></svg></a></p>
-        </article>
-        <article class="project">
-          <h3>dotfiles</h3>
-          <p class="context">Personal project</p>
-          <p>Configuration of my first Arch Linux installation, set up to learn a fully customizable distribution.</p>
-          <p class="tech">Linux</p>
-          <p class="links"><a href="https://github.com/Lisandstone/dotfiles" target="_blank" rel="noopener">Repository<svg class="icon"><use href="#i-arrow"/></svg></a></p>
-        </article>
       </div>
     </section>
 
-    <section class="section" id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
-      <div class="skills">
-        <div>
+    <section class="section container" id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills</h2>
+      <div class="stack-groups">
+        <div class="stack-group">
           <h3>Languages</h3>
-          <ul class="tech-list">
-            <li><img src="assets/icons/csharp.svg" alt="" width="20" height="20">C#</li>
-            <li><img src="assets/icons/visualbasic.svg" alt="" width="20" height="20">VB.NET</li>
-            <li><img src="assets/icons/java.svg" alt="" width="20" height="20">Java</li>
-            <li><img src="assets/icons/typescript.svg" alt="" width="20" height="20">TypeScript</li>
-            <li><img src="assets/icons/javascript.svg" alt="" width="20" height="20">JavaScript</li>
-            <li><img src="assets/icons/python.svg" alt="" width="20" height="20">Python</li>
-            <li><img src="assets/icons/c.svg" alt="" width="20" height="20">C</li>
+          <ul class="tech">
+            <li><img src="assets/icons/csharp.svg" alt="" width="22" height="22">C#</li>
+            <li><img src="assets/icons/visualbasic.svg" alt="" width="22" height="22">VB.NET</li>
             <li>T-SQL</li>
-            <li><img src="assets/icons/bash.svg" alt="" width="20" height="20">Bash</li>
+            <li><img src="assets/icons/java.svg" alt="" width="22" height="22">Java</li>
+            <li><img src="assets/icons/typescript.svg" alt="" width="22" height="22">TypeScript</li>
+            <li><img src="assets/icons/javascript.svg" alt="" width="22" height="22">JavaScript</li>
+            <li><img src="assets/icons/python.svg" alt="" width="22" height="22">Python</li>
+            <li><img src="assets/icons/c.svg" alt="" width="22" height="22">C</li>
+            <li><img src="assets/icons/bash.svg" alt="" width="22" height="22">Bash</li>
             <li>Pascal</li>
           </ul>
         </div>
-        <div>
+        <div class="stack-group">
           <h3>Frameworks</h3>
-          <ul class="tech-list">
-            <li><img src="assets/icons/dotnetcore.svg" alt="" width="20" height="20">.NET</li>
-            <li><img src="assets/icons/blazor.svg" alt="" width="20" height="20">Blazor</li>
+          <ul class="tech">
+            <li><img src="assets/icons/dotnetcore.svg" alt="" width="22" height="22">.NET</li>
+            <li><img src="assets/icons/blazor.svg" alt="" width="22" height="22">Blazor</li>
             <li>WinForms</li>
-            <li><img src="assets/icons/spring.svg" alt="" width="20" height="20">Spring Boot</li>
-            <li><img src="assets/icons/hibernate.svg" alt="" width="20" height="20">Spring Data JPA / Hibernate</li>
+            <li><img src="assets/icons/spring.svg" alt="" width="22" height="22">Spring Boot</li>
+            <li><img src="assets/icons/hibernate.svg" alt="" width="22" height="22">Spring Data JPA / Hibernate</li>
             <li>Spring Security (JWT)</li>
-            <li><img src="assets/icons/angular.svg" alt="" width="20" height="20">Angular</li>
-            <li><img src="assets/icons/nodejs.svg" alt="" width="20" height="20">Node.js</li>
-            <li><img src="assets/icons/express.svg" alt="" width="20" height="20">Express</li>
-            <li><img src="assets/icons/html5.svg" alt="" width="20" height="20">HTML</li>
-            <li><img src="assets/icons/css3.svg" alt="" width="20" height="20">CSS</li>
+            <li><img src="assets/icons/angular.svg" alt="" width="22" height="22">Angular</li>
+            <li><img src="assets/icons/nodejs.svg" alt="" width="22" height="22">Node.js</li>
+            <li><img src="assets/icons/express.svg" alt="" width="22" height="22">Express</li>
+            <li><img src="assets/icons/html5.svg" alt="" width="22" height="22">HTML</li>
+            <li><img src="assets/icons/css3.svg" alt="" width="22" height="22">CSS</li>
           </ul>
         </div>
-        <div>
+        <div class="stack-group">
           <h3>Databases</h3>
-          <ul class="tech-list">
-            <li><img src="assets/icons/microsoftsqlserver.svg" alt="" width="20" height="20">SQL Server</li>
-            <li><img src="assets/icons/mysql.svg" alt="" width="20" height="20">MySQL</li>
+          <ul class="tech">
+            <li><img src="assets/icons/microsoftsqlserver.svg" alt="" width="22" height="22">SQL Server</li>
+            <li><img src="assets/icons/mysql.svg" alt="" width="22" height="22">MySQL</li>
           </ul>
         </div>
-        <div>
+        <div class="stack-group">
           <h3>Tools</h3>
-          <ul class="tech-list">
-            <li><img src="assets/icons/git.svg" alt="" width="20" height="20">Git</li>
+          <ul class="tech">
+            <li><img src="assets/icons/git.svg" alt="" width="22" height="22">Git</li>
             <li>SVN</li>
-            <li><img src="assets/icons/docker.svg" alt="" width="20" height="20">Docker</li>
-            <li><img src="assets/icons/visualstudio.svg" alt="" width="20" height="20">Visual Studio</li>
-            <li><img src="assets/icons/vscode.svg" alt="" width="20" height="20">Visual Studio Code</li>
+            <li><img src="assets/icons/docker.svg" alt="" width="22" height="22">Docker</li>
+            <li><img src="assets/icons/visualstudio.svg" alt="" width="22" height="22">Visual Studio</li>
+            <li><img src="assets/icons/vscode.svg" alt="" width="22" height="22">Visual Studio Code</li>
             <li>SQL Server Management Studio</li>
-            <li><img src="assets/icons/intellij.svg" alt="" width="20" height="20">IntelliJ IDEA</li>
+            <li><img src="assets/icons/intellij.svg" alt="" width="22" height="22">IntelliJ IDEA</li>
             <li>Lazarus</li>
             <li>Code::Blocks</li>
-            <li><img src="assets/icons/postman.svg" alt="" width="20" height="20">Postman</li>
-            <li><img src="assets/icons/swagger.svg" alt="" width="20" height="20">Swagger</li>
-            <li><img src="assets/icons/jira.svg" alt="" width="20" height="20">Jira</li>
+            <li><img src="assets/icons/postman.svg" alt="" width="22" height="22">Postman</li>
+            <li><img src="assets/icons/swagger.svg" alt="" width="22" height="22">Swagger</li>
+            <li><img src="assets/icons/jira.svg" alt="" width="22" height="22">Jira</li>
             <li>IIS</li>
-            <li><img src="assets/icons/archlinux.svg" alt="" width="20" height="20">Arch Linux</li>
+            <li><img src="assets/icons/archlinux.svg" alt="" width="22" height="22">Arch Linux</li>
           </ul>
         </div>
-        <div>
+        <div class="stack-group">
           <h3>Design and documentation</h3>
-          <ul class="tech-list">
+          <ul class="tech">
             <li>UML</li>
             <li>C4 model</li>
             <li>Use cases</li>
@@ -245,9 +306,9 @@
             <li>IcePanel</li>
           </ul>
         </div>
-        <div>
+        <div class="stack-group">
           <h3>Practices</h3>
-          <ul class="tech-list">
+          <ul class="tech">
             <li>REST APIs</li>
             <li>Requirements analysis</li>
             <li>Manual testing</li>
@@ -258,12 +319,15 @@
       </div>
     </section>
 
-    <section class="section" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <ul class="plain-list">
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/guido-devoto" target="_blank" rel="noopener">linkedin.com/in/guido-devoto</a></li>
-        <li>GitHub: <a href="https://github.com/LisandrockDev" target="_blank" rel="noopener">github.com/LisandrockDev</a></li>
-      </ul>
+    <section class="section container" id="contact" aria-labelledby="contact-title">
+      <div class="contact-card">
+        <h2 class="section-title" id="contact-title">Contact</h2>
+        <p>The best way to reach me is LinkedIn.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/guido-devoto" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          <a class="btn" href="https://github.com/LisandrockDev" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
+        </div>
+      </div>
     </section>
   </main>
 
